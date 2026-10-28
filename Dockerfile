@@ -48,4 +48,4 @@ USER appuser
 ENV PORT=8080
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-XX:+UseContainerSupport", "-XX:MaxRAMPercentage=75.0", "-Xmx350m", "-Djava.security.egd=file:/dev/./urandom", "-jar", "app.jar"]
